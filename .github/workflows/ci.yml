@@ -68,11 +68,7 @@ jobs:
       run: |
         cp -Path ${{ github.workspace }}/project/build_dependencies/windows/* ${{ github.workspace }}/project/build/windows/runner/Debug/
       working-directory: ${{ github.workspace }}/project
-    - uses: papeloto/action-zip@v1
-      with:
-        files: ${{ github.workspace }}/project/build/windows/runner/Debug
-        dest: ${{ github.workspace }}/project/build/windows/runner/result.zip
     - uses: actions/upload-artifact@v1
       with:
         name: all
-        path: ${{ github.workspace }}/project/build/windows/runner/result.zip
+        path: ${{ github.workspace }}/project/build/windows/runner/Debug
