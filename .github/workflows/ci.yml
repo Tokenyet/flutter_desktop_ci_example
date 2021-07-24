@@ -70,8 +70,8 @@ jobs:
       working-directory: ${{ github.workspace }}/project
     - uses: papeloto/action-zip@v1
       with:
-        files: ${{ github.workspace }}/project/build/windows/runner/debug
-        dest: result.zip
+        files: ${{ github.workspace }}/project/build/windows/runner/Debug
+        dest: ${{ github.workspace }}/project/build/windows/runner/result.zip
     - uses: actions/upload-artifact@v1
       with:
         name: all
