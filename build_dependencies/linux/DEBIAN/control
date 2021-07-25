@@ -1,7 +1,6 @@
 Package: flutter-desktop-ci-example
 Version: 1.0
-Architecture: any
-Multi-Arch: same
+Architecture: amd64
 Maintainer: Tokenyet(Dowen) <tokenyete@gmail.com>
 Description: A example to build linux deb for installing automatically.
  More description? Add it your self.
