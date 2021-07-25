@@ -81,10 +81,11 @@ jobs:
     - name: Copy essentials to Linux artifacs and package
       if: startsWith(matrix.os, 'ubuntu')
       run: |
-        cp -a ${{ github.workspace }}/project/build_dependencies/linux/* ${{ github.workspace }}/project/build/linux/x64/debug/bundle
-        dpkg-deb --build --root-owner-group ${{ github.workspace }}/project/build/linux/x64/debug/bundle
+        cp -r ${{ github.workspace }}/project/build_dependencies/linux ${{ github.workspace }}/project/build/linux/x64/debug/result
+        mv ${{ github.workspace }}/project/build/linux/x64/debug/bundle/* ${{ github.workspace }}/project/build/linux/x64/debug/result/usr/local/lib/flutter_desktop_ci_example/
+        dpkg-deb --build --root-owner-group ${{ github.workspace }}/project/build/linux/x64/debug/result
       working-directory: ${{ github.workspace }}/project
     - uses: actions/upload-artifact@v1
       with:
         name: linux-debug
-        path: ${{ github.workspace }}/project/build/linux/x64/debug/bundle.deb
+        path: ${{ github.workspace }}/project/build/linux/x64/debug/result.deb
