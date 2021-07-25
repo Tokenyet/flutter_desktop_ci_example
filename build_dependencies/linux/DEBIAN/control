@@ -4,4 +4,4 @@ Architecture: amd64
 Maintainer: Tokenyet(Dowen) <tokenyete@gmail.com>
 Description: A example to build linux deb for installing automatically.
  More description? Add it your self.
-Build-Depends: libgtk-3-0, libblkid1, liblzma5
+Depends: libgtk-3-0, libblkid1, liblzma5
