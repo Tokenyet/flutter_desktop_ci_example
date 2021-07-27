@@ -76,6 +76,7 @@ jobs:
         mv -Path ${{ github.workspace }}/project/build/windows/runner/Debug/ ${{ github.workspace }}/project/build/windows/runner/flutter_desktop_github_ci_example/flutter_desktop_github_ci_example
       working-directory: ${{ github.workspace }}/project
     - name: Upload Windows artifaces (Debug)
+      if: startsWith(matrix.os, 'windows')
       uses: actions/upload-artifact@v1
       with:
         name: windows-deubg
@@ -88,6 +89,7 @@ jobs:
         mv -Path ${{ github.workspace }}/project/build/windows/runner/Release/ ${{ github.workspace }}/project/build/windows/runner/flutter_desktop_github_ci_example_release/flutter_desktop_github_ci_example
       working-directory: ${{ github.workspace }}/project
     - name: Upload Windows artifaces (Release)
+      if: startsWith(matrix.os, 'windows')
       uses: actions/upload-artifact@v1
       with:
         name: windows-release
@@ -101,6 +103,7 @@ jobs:
         dpkg-deb --build --root-owner-group ${{ github.workspace }}/project/build/linux/x64/debug/result
       working-directory: ${{ github.workspace }}/project
     - name: Upload Linux artifaces (Debug)
+      if: startsWith(matrix.os, 'ubuntu')
       uses: actions/upload-artifact@v1
       with:
         name: linux-debug
@@ -113,6 +116,7 @@ jobs:
         dpkg-deb --build --root-owner-group ${{ github.workspace }}/project/build/linux/x64/release/result
       working-directory: ${{ github.workspace }}/project
     - name: Upload Linux artifaces (Release)
+      if: startsWith(matrix.os, 'ubuntu')
       uses: actions/upload-artifact@v1
       with:
         name: linux-release
@@ -124,6 +128,7 @@ jobs:
         mkdir ${{ github.workspace }}/project/build/macos/Build/Products/flutter_desktop_ci_example
         mv ${{ github.workspace }}/project/build/macos/Build/Products/Debug/flutter_desktop_ci_example.app ${{ github.workspace }}/project/build/macos/Build/Products/flutter_desktop_ci_example/flutter_desktop_ci_example.app
     - name: Upload MacOS artifaces (Debug)
+      if: startsWith(matrix.os, 'macOS')
       uses: actions/upload-artifact@v1
       with:
         name: macos-debug
@@ -134,6 +139,7 @@ jobs:
         mkdir ${{ github.workspace }}/project/build/macos/Build/Products/flutter_desktop_ci_example_release
         mv ${{ github.workspace }}/project/build/macos/Build/Products/Release/flutter_desktop_ci_example.app ${{ github.workspace }}/project/build/macos/Build/Products/flutter_desktop_ci_example_release/flutter_desktop_ci_example.app
     - name: Upload MacOS artifaces (Release)
+      if: startsWith(matrix.os, 'macOS')
       uses: actions/upload-artifact@v1
       with:
         name: macos-release
