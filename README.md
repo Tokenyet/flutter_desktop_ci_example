@@ -10,6 +10,9 @@ Support Platform:
 ## How does this work?
 This project contains dependencies for all platforms (see [build_dependencies](build_dependencies)) and use [github/workflows](.github/workflows) that heavily modified from official [workflows](https://github.com/google/flutter-desktop-embedding/blob/master/.github/workflows/ci.yml) to complete the job.
 
+## Prerequisite
+See requirement part from official [https://flutter.dev/desktop#requirements](https://flutter.dev/desktop#requirements).
+
 ## Steps to beginners
 1. Config
 ```
@@ -17,7 +20,7 @@ This project contains dependencies for all platforms (see [build_dependencies](b
  flutter config --enable-macos-desktop
  flutter config --enable-linux-desktop
 ```
-2. Run
+2. Run hello world
 ```
 flutter run -d windows # for debug version
 flutter run windows # for release version
