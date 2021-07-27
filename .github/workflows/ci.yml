@@ -93,8 +93,9 @@ jobs:
     - name: Copy essentials to Macos and package 
       if: startsWith(matrix.os, 'macOS')
       run: |
-        mv ${{ github.workspace }}/project/build/macos/Build/Products/Debug ${{ github.workspace }}/project/build/macos/Build/Products/flutter_desktop_ci_example
+        mkdir ${{ github.workspace }}/project/build/macos/Build/Products/flutter_desktop_ci_example
+        mv ${{ github.workspace }}/project/build/macos/Build/Products/Debug/flutter_desktop_ci_example.app ${{ github.workspace }}/project/build/macos/Build/Products/flutter_desktop_ci_example/flutter_desktop_ci_example.app
     - uses: actions/upload-artifact@v1
       with:
         name: macos-debug
-        path: ${{ github.workspace }}/project/build/macos/Build/Products/flutter_desktop_ci_example/flutter_desktop_ci_example.app
+        path: ${{ github.workspace }}/project/build/macos/Build/Products/flutter_desktop_ci_example
