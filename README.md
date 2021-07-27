@@ -16,17 +16,21 @@ See requirement part from official [https://flutter.dev/desktop#requirements](ht
 ## Steps to beginners
 1. Config
 ```
- flutter config --enable-windows-desktop
- flutter config --enable-macos-desktop
- flutter config --enable-linux-desktop
+ flutter config --enable-windows-desktop # windows devs
+ flutter config --enable-macos-desktop # macos devs
+ flutter config --enable-linux-desktop # linux devs
 ```
 2. Run hello world
 ```
 flutter run -d windows # for debug version
-flutter run windows # for release version
+flutter run -d macos
+flutter run -d linux
+flutter run windows # for release version 
 ```
 3. Distribution
 see [ci.yml](.github/workflows/ci.yml).
+
+**notice: The project you can build is decided by the machine os.**
 
 ## Conculsion
 If you like this project, leave a star is the best support! File an issue and PR are also welcome :)
