@@ -30,7 +30,7 @@ flutter run windows # for release version
 3. Distribution
 see [ci.yml](.github/workflows/ci.yml).
 
-**notice: The project you can build is decided by the machine os.**
+**Notice: The project you can build is decided by the machine os. so you can't build macos If your machine is windows/linux**
 
 ## Conculsion
 If you like this project, leave a star is the best support! File an issue and PR are also welcome :)
